@@ -15,7 +15,22 @@ Reference [roman-kachanovsky/go-built-in]
 `go get github.com/pytool/functools`
 
 ## Usage
+```
+package main
 
+import (
+	"log"
+
+	. "github.com/pytool/functools"
+)
+
+func PartialFun() {
+	sum := func(a, b int) int { return a * b }
+	sum10 := Partial(sum, 10)
+	result := sum10(10)
+	log.Println(result)
+}
+```
 **Partial** 偏函数的功能就是：把一个函数的某些参数给固定住，返回一个新的函数 
 ```py
 multiply(x, y)；
